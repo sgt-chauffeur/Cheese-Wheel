@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Table of Contents</title>
+  <title>Login</title>
   <style>
-    /* Page background and font */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #80deea);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,58 +15,85 @@
       margin: 0;
     }
 
-    /* TOC container */
-    .toc {
+    .login-container {
       background-color: rgba(255, 255, 255, 0.9);
       padding: 40px 60px;
-      border-radius: 20px;
+      border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       text-align: center;
     }
 
-    .toc h1 {
-      font-size: 2.5rem;
-      color: #4b0082;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 2px #aaa;
-    }
-
-    /* List styling */
-    .toc ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .toc li {
-      margin: 15px 0;
-    }
-
-    .toc a {
-      text-decoration: none;
-      font-size: 1.8rem;
-      color: #ff4500;
-      padding: 10px 20px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      display: inline-block;
-      background-color: #fff0f5;
+    /* Image styling */
+    .login-container img {
+      width: 80px; /* small image */
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%; /* makes it circular */
+      margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .toc a:hover {
-      background-color: #ff69b4;
+    .login-container h1 {
+      margin-bottom: 30px;
+      color: #00796b;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      background-color: #00796b;
       color: white;
-      transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .error {
+      color: red;
+      margin-top: 15px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="toc">
-    <h1>Table of Contents</h1>
-    <ul>
-      <li><a href="chem.pdf" target="_blank">PY</a></li>
-    </ul>
+  <div class="login-container">
+    <!-- Small photo added here -->
+    <img src="thing.jpg" alt="Logo or Photo">
+
+    <h1>Login</h1>
+    <input type="password" id="password" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Login</button>
+    <div class="error" id="error">Incorrect password!</div>
   </div>
+
+  <script>
+    function checkPassword() {
+      const pwd = document.getElementById('password').value;
+      const errorDiv = document.getElementById('error');
+
+      // The “secret” password
+      if (pwd === "mypassword") {
+        // Redirect to the private page
+        window.location.href = "private.html";
+      } else {
+        errorDiv.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
