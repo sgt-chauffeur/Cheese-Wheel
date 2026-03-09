@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dark Glow Media Page</title>
+<title>Dark Red Media</title>
 
 <style>
 
+/* page base */
 body{
     margin:0;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:Arial, Helvetica, sans-serif;
-    color:white;
+    font-family:Arial, sans-serif;
     background:#050505;
-    overflow:hidden;
+    color:white;
 }
 
-/* glowing red animated background */
+/* glowing animated red background */
 body::before{
     content:"";
     position:fixed;
@@ -26,48 +26,33 @@ body::before{
     height:200%;
     background:
         radial-gradient(circle at 20% 30%, rgba(255,0,0,0.4), transparent 40%),
-        radial-gradient(circle at 80% 60%, rgba(255,0,0,0.35), transparent 40%),
-        radial-gradient(circle at 50% 80%, rgba(255,0,0,0.25), transparent 40%);
-    animation:moveGlow 18s infinite linear;
-    filter:blur(80px);
+        radial-gradient(circle at 80% 50%, rgba(255,0,0,0.35), transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(255,0,0,0.3), transparent 40%);
+    filter:blur(90px);
+    animation:moveGlow 20s linear infinite;
     z-index:-1;
 }
 
 @keyframes moveGlow{
     0%{transform:translate(0,0);}
-    50%{transform:translate(-20%, -10%);}
+    50%{transform:translate(-15%, -10%);}
     100%{transform:translate(0,0);}
 }
 
-/* glass card */
+/* fancy container */
 .container{
-    background:rgba(20,20,20,0.7);
+    background:rgba(20,20,20,0.75);
     backdrop-filter:blur(10px);
-    border:1px solid rgba(255,0,0,0.3);
-    box-shadow:0 0 40px rgba(255,0,0,0.35);
+    border:1px solid rgba(255,0,0,0.35);
     border-radius:16px;
     padding:40px;
-    width:700px;
     text-align:center;
+    box-shadow:0 0 40px rgba(255,0,0,0.5);
 }
 
 h1{
     color:#ff4d4d;
     text-shadow:0 0 15px red;
-}
-
-img{
-    width:100%;
-    border-radius:10px;
-    margin-top:20px;
-    box-shadow:0 0 20px rgba(255,0,0,0.5);
-}
-
-video{
-    width:100%;
-    margin-top:25px;
-    border-radius:10px;
-    box-shadow:0 0 25px rgba(255,0,0,0.6);
 }
 
 </style>
@@ -76,14 +61,15 @@ video{
 <body>
 
 <div class="container">
-    <h1>&lt;&frasl;&gt;</h1>
+<h1>&lt;&frasl;&gt;</h1>
 
-    <img src="files/thing.jpg" alt="Image" width="200">
+<img src="files/thing.jpg" alt="Image" width="200">
+<hr>
 
-    <video controls>
-        <source src="files/movie.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<video controls>
+<source src="files/movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 </div>
 
